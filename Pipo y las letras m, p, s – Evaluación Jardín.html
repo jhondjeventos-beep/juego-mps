@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Pipo y las letras m, p, s</title>
+<style>
+:root{--bg1:#8fd3ff;--bg2:#e3f8c8;--card:#fff;--ink:#2b2b3a;--a:#ff7043;--ok:#43a047;--bad:#e53935;--line:#ffd166;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a2560;--bg2:#1d3b4f;--card:#3a3566;--ink:#fff7e0}}
+:root[data-theme="dark"]{--bg1:#2a2560;--bg2:#1d3b4f;--card:#3a3566;--ink:#fff7e0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;background:linear-gradient(var(--bg1),var(--bg2)) fixed;color:var(--ink);font-family:"Comic Sans MS","Chalkboard SE",system-ui,sans-serif;text-align:center;overflow-x:hidden}
+main{max-width:780px;margin:0 auto;padding:12px}
+h1{font-size:clamp(1.6rem,7vw,2.6rem);margin:.2em 0;text-shadow:0 3px 0 rgba(255,255,255,.6)}
+.card{background:var(--card);border-radius:26px;padding:16px;box-shadow:0 5px 0 var(--line);margin:10px 0}
+button{font:inherit;cursor:pointer;border:0;border-radius:22px;color:inherit}
+.big{background:var(--a);color:#fff;font-size:1.25rem;padding:14px 20px;margin:6px;box-shadow:0 5px 0 #c4491f;transition:transform .1s}
+.big:active{transform:translateY(4px);box-shadow:none}
+.big.b{background:#5c6bc0;box-shadow:0 5px 0 #3949ab}.big.g{background:#2fb36d;box-shadow:0 5px 0 #1f8a52}.big.y{background:#f4a300;box-shadow:0 5px 0 #b87800}.big.p{background:#d6479b;box-shadow:0 5px 0 #a02e72}
+input{font:inherit;font-size:1.2rem;padding:10px 14px;border-radius:16px;border:3px solid var(--line);background:var(--card);color:var(--ink);width:min(320px,80%)}
+#mas{display:flex;align-items:center;justify-content:center;gap:10px;margin:4px 0}
+#face{font-size:min(22vw,100px);cursor:pointer;background:none;filter:drop-shadow(0 6px 0 rgba(0,0,0,.15));line-height:1}
+#bub{background:var(--card);border-radius:22px;padding:10px 16px;font-size:1.1rem;max-width:62%;position:relative;box-shadow:0 4px 0 var(--line)}
+#bub:before{content:"";position:absolute;left:-10px;top:50%;margin-top:-8px;border:8px solid transparent;border-right-color:var(--card);border-left:0}
+.talk{animation:talk .3s infinite alternate}.hop{animation:hop .7s}
+@keyframes talk{to{transform:translateY(-10px) rotate(-7deg) scale(1.06)}}
+@keyframes hop{30%{transform:translateY(-34px) scale(1.25) rotate(8deg)}}
+#stim{background:var(--card);border:4px dashed var(--line);font-size:min(28vw,140px);line-height:1.1;padding:8px 26px;min-width:190px;border-radius:26px}
+#stim.snd{animation:pulse 1.2s infinite}@keyframes pulse{50%{transform:scale(1.07)}}
+#opts{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:14px}
+.opt{background:var(--card);border:5px solid #ff6b6b;font-size:min(22vw,96px);width:min(28vw,150px);height:min(28vw,150px);display:flex;align-items:center;justify-content:center;line-height:1;box-shadow:0 5px 0 rgba(0,0,0,.15);padding:0;overflow:hidden}
+.opt:nth-child(2){border-color:#4dabf7}.opt:nth-child(3){border-color:#51cf66}
+.opt:active{transform:scale(.95)}
+.opt.letter{font-size:min(15vw,70px);font-weight:bold}
+.opt.scene{font-size:min(19vw,90px);width:min(44vw,290px);height:min(34vw,185px);border-radius:20px}
+.sc{width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:center;font-size:.5em;padding:4px 0}
+.sc i{align-self:flex-end;font-style:normal;padding-right:6px}.sc b{font-weight:normal;letter-spacing:-.06em;white-space:nowrap}
+.opt.ok{background:#c8e6c9;border-color:var(--ok)!important}
+.opt.no{animation:sh .4s;opacity:.6}@keyframes sh{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+.w{font-size:min(15vw,76px);font-weight:bold;letter-spacing:.06em}.w em{font-style:normal;color:var(--a)}
+#msg{font-size:1.6rem;min-height:2em;margin-top:8px;font-weight:bold}
+#prog{font-size:1.4rem;letter-spacing:.1em}
+table{width:100%;border-collapse:collapse;text-align:left}td,th{padding:8px;border-bottom:2px solid var(--line)}
+.hide{display:none}small{opacity:.8}
+.cf{position:fixed;top:-10vh;font-size:2rem;pointer-events:none;animation:fall 1.8s linear forwards;z-index:9}
+@keyframes fall{to{transform:translateY(118vh) rotate(420deg)}}
+.cl{position:fixed;font-size:3rem;opacity:.7;animation:fl 14s linear infinite;pointer-events:none}
+@keyframes fl{from{transform:translateX(-20vw)}to{transform:translateX(120vw)}}
+@media print{.big,#mas,.cl{display:none}body{background:#fff;color:#000}}
+</style></head><body>
+<span class="cl" style="top:6%">☁️</span><span class="cl" style="top:22%;animation-delay:-7s">☁️</span>
+<main>
+<div id="mas"><button id="face" onclick="say(q&&!$('#game').classList.contains('hide')?q.say:'¡Hola! Soy Pipo. ¡Vamos a jugar con la m, la p y la s!')">🐥</button><div id="bub">¡Hola! Soy Pipo 🎈 ¡Vamos a jugar!</div></div>
+<section id="home">
+<h1>🦋 Pipo y las letras <span style="color:#e53935">m</span> <span style="color:#1e88e5">p</span> <span style="color:#43a047">s</span> 🐸</h1>
+<div class="card"><p>Evaluación para Jardín</p>
+<input id="name" placeholder="Nombre del niño o niña" autocomplete="off">
+<p><button class="big" onclick="start([1,2,3,4])">▶ ¡Jugar todo!</button></p>
+<p><button class="big b" onclick="start([1])">🔤 Letra inicial</button><button class="big g" onclick="start([2])">👂 Escucho y busco</button><button class="big y" onclick="start([3])">👀 Leo y busco</button><button class="big p" onclick="start([4])">🧩 Adivinanzas</button></p>
+<small>Usa Chrome o Edge con el volumen activado. Toca a Pipo para que repita.</small></div>
+</section>
+<section id="game" class="hide">
+<div id="prog"></div>
+<button id="stim" class="card" onclick="say(q.say)" aria-label="Repetir"></button>
+<div id="opts"></div>
+<div id="msg"></div>
+</section>
+<section id="report" class="hide"></section>
+</main>
+<script>
+const $=s=>document.querySelector(s),sh=a=>[...a].sort(()=>Math.random()-.5);
+const SVGM='<svg viewBox="0 0 64 64" width="1em" height="1em"><rect x="6" y="22" width="52" height="8" rx="2" fill="#a0622d"/><rect x="12" y="30" width="6" height="26" fill="#7a4a1f"/><rect x="46" y="30" width="6" height="26" fill="#7a4a1f"/></svg>';
+const SVGP='<svg viewBox="0 0 64 64" width="1em" height="1em"><path d="M4 22h56l4 38H0z" fill="#d9b38c"/><path d="M32 22v38M18 22l-9 38M46 22l9 38M2 40h60" stroke="#8a6a4a" stroke-width="2" fill="none"/></svg>';
+const SC=(bg,t,b)=>`<div class="sc" style="background:${bg}"><i>${t}</i><b>${b}</b></div>`,G='linear-gradient(#bfe9ff 55%,#8bd36b 55%)';
+const P2={parque:SC(G,'☁️☀️','🌳🧒⚽🛝'),charco:SC('linear-gradient(#cfd8dc 50%,#8bd36b 50%)','🌧️☁️','🌿🐸🪷💧'),sopa:SC('linear-gradient(#ffe0b2,#ffcc80)','🖼️🕰️','👩🍲🪑'),mariposa:SC(G,'☀️🦋','🌷🌻🌷'),pesa:SC('linear-gradient(#cfd8dc,#90a4ae)','💡','👨🏋️💪'),nina:SC(G,'🐦☁️','👧🍎🌳')};
+const S2={parque:'El niño juega en el parque',charco:'El sapo está en el charco',sopa:'Mamá toma la sopa en la mesa',mariposa:'La mariposa vuela en el jardín',pesa:'Papá levanta la pesa',nina:'La niña come una manzana bajo el árbol'};
+const P3={sapo:'🐸',masa:'🫓',piso:SVGP,mama:'👩‍👧',papa:'👨‍👦',sopa:'🥣',mesa:SVGM},NM3={sapo:'sapo',masa:'masa',piso:'piso',mama:'mamá',papa:'papá',sopa:'sopa',mesa:'mesa'};
+const P4={perro:'🐶',banano:'🍌',gato:'🐱',elefante:'🐘',vaca:'🐄'};
+const R4=[['Tengo cuatro patas, ladro y muevo la cola cuando estoy feliz. ¿Quién soy?','perro'],['Soy amarillo, me pelas para comerme y a los monos les gusto. ¿Qué soy?','banano'],['Maúllo, tengo bigotes y me gusta cazar ratones. ¿Quién soy?','gato'],['Soy enorme, tengo una trompa larga y orejas grandes. ¿Quién soy?','elefante'],['Hago muuu y doy leche. ¿Quién soy?','vaca']];
+const W1={m:[['mapa','🗺️'],['misa','⛪'],['mimo','🎭']],p:[['paso','👣'],['peso','🪙'],['pepe','👦']],s:[['suma','➕'],['silla','🪑'],['sol','☀️']]};
+const mo=(P,a)=>sh([a,...sh(Object.keys(P).filter(x=>x!=a)).slice(0,2)]).map(k=>({k,h:P[k]}));
+const ACT={
+1:{t:'Letra inicial',nm:k=>k,mk:()=>sh(['m','p','s'].flatMap(l=>sh(W1[l]).slice(0,2).map(([w,e])=>({say:'¿Con qué letra empieza '+w+'?',show:e,ans:l,lbl:w,letter:1,opts:['m','p','s'].map(k=>({k,h:k.toUpperCase()+k}))}))))},
+2:{t:'Escucho y busco',nm:k=>S2[k],mk:()=>sh(Object.keys(S2)).slice(0,5).map(a=>({say:S2[a],hint:'¡Escucha con atención! 👂',show:'🔊',snd:1,ans:a,lbl:S2[a],scene:1,opts:mo(P2,a)}))},
+3:{t:'Leo y busco',nm:k=>NM3[k],mk:()=>sh(Object.keys(P3)).slice(0,5).map(a=>({say:'Lee la palabra y toca el dibujo',hint:'¡Lee la palabra! 👀',show:`<span class="w">${NM3[a].replace(/[mps]/g,c=>`<em>${c}</em>`)}</span>`,ans:a,lbl:NM3[a],opts:mo(P3,a)}))},
+4:{t:'Adivinanzas',nm:k=>k,mk:()=>sh(R4).slice(0,4).map(([s,a])=>({say:s,hint:'¡Escucha la adivinanza! 🤔',show:'🔊',snd:1,ans:a,lbl:'adivinanza: '+a,opts:mo(P4,a)}))}
+};
+let queue,cur,Q,i,q,failed,ok,res,errs,locked,AC;
+function tone(f,d,t=0){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain();o.type='triangle';o.frequency.value=f;g.gain.value=.15;o.connect(g);g.connect(AC.destination);o.start(AC.currentTime+t);o.stop(AC.currentTime+t+d)}catch(e){}}
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t),vs=speechSynthesis.getVoices(),f=$('#face');u.lang='es-CO';u.rate=.88;u.pitch=2;
+const v=vs.find(v=>/es[-_]CO/i.test(v.lang))||vs.find(v=>/es[-_](MX|US|419)/i.test(v.lang))||vs.find(v=>/^es/i.test(v.lang));if(v)u.voice=v;
+u.onstart=()=>f.classList.add('talk');u.onend=u.onerror=()=>f.classList.remove('talk');speechSynthesis.speak(u);setTimeout(()=>f.classList.remove('talk'),9000)}catch(e){}}
+function bub(t,e){$('#bub').textContent=t;if(e)$('#face').textContent=e}
+function view(id){['home','game','report'].forEach(x=>$('#'+x).classList.toggle('hide',x!=id))}
+function boom(){for(let k=0;k<16;k++){const s=document.createElement('span');s.className='cf';s.textContent=sh(['⭐','🎈','✨','🎉','🌈'])[0];s.style.left=Math.random()*95+'vw';s.style.animationDelay=Math.random()*.4+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),2400)}}
+function start(l){queue=[...l];res={};errs=[];nextAct()}
+function nextAct(){if(!queue.length)return report();cur=queue.shift();Q=ACT[cur].mk();i=0;ok=0;view('game');show()}
+function show(){q=Q[i];failed=false;locked=false;$('#msg').textContent='';bub(q.hint||q.say,'🐥');
+$('#prog').textContent=ACT[cur].t+' '+Q.map((_,k)=>k<i?'⭐':k==i?'🔸':'⚪').join('');
+const s=$('#stim');s.innerHTML=q.show;s.classList.toggle('snd',!!q.snd);
+$('#opts').innerHTML='';q.opts.forEach(o=>{const b=document.createElement('button');b.className='opt'+(q.letter?' letter':'')+(q.scene?' scene':'');b.innerHTML=o.h;b.onclick=()=>pick(b,o);$('#opts').appendChild(b)});
+setTimeout(()=>say(q.say),400)}
+function pick(b,o){if(locked)return;const f=$('#face');
+if(o.k==q.ans){locked=true;if(!failed)ok++;b.classList.add('ok');const p=sh(['¡Muy bien!','¡Genial!','¡Lo lograste!','¡Excelente!'])[0];$('#msg').textContent='⭐ '+p+' ⭐';bub(p,'🥳');say(p);boom();tone(660,.12);tone(880,.12,.12);tone(1100,.2,.24);f.classList.add('hop');setTimeout(()=>f.classList.remove('hop'),700);
+setTimeout(()=>{i++;if(i<Q.length)show();else{res[cur]=[ok,Q.length];nextAct()}},2000)}
+else{failed=true;b.classList.add('no');$('#msg').textContent='¡Tú puedes! Intenta otra vez 💪';bub('¡Tú puedes! Inténtalo otra vez','🐥');say('Tú puedes. Inténtalo otra vez');tone(220,.3);
+errs.push(`${ACT[cur].t} (${q.lbl}): eligió "${ACT[cur].nm(o.k)}"`)}}
+function report(){view('report');bub('¡Lo hicieron genial!','🥳');boom();say('¡Terminamos! ¡Lo hiciste muy bien!');
+const n=$('#name').value.trim()||'Sin nombre',v=Object.values(res),tot=v.reduce((s,r)=>s+r[0],0),max=v.reduce((s,r)=>s+r[1],0);
+$('#report').innerHTML=`<h1>🎉 ¡Terminamos! 🎉</h1><div class="card"><h2>${n}</h2><small>${new Date().toLocaleDateString('es-CO')}</small>
+<table><tr><th>Actividad</th><th>Aciertos al 1.er intento</th></tr>${Object.entries(res).map(([k,r])=>`<tr><td>${ACT[k].t}</td><td>${r[0]} de ${r[1]} ${'⭐'.repeat(r[0])}</td></tr>`).join('')}
+<tr><th>Total</th><th>${tot} de ${max}</th></tr></table>
+<h3>Errores observados</h3>${errs.length?'<ul style="text-align:left">'+errs.map(e=>'<li>'+e+'</li>').join('')+'</ul>':'<p>Ninguno 👏</p>'}
+<button class="big" onclick="window.print()">🖨 Imprimir</button><button class="big b" onclick="view('home');bub('¡Hola! Soy Pipo 🎈 ¡Vamos a jugar!','🐥')">Nueva evaluación</button></div>`}
+</script></body></html>
